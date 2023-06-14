@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelContasBilly" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dac8311e-d12d-48d3-a8ce-3fa8827b4ebd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM contas]]>
+	</queryString>
+	<field name="Saldo" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Código" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Agência" class="java.lang.Integer"/>
+	<field name="NúmeroConta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Código">
+		<groupExpression><![CDATA[$F{Código}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<image>
+				<reportElement x="219" y="1" width="116" height="113" uuid="6ee49c87-1765-46f6-bdaa-34e2b67fe13b"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuário\\Desktop\\Billy_Kids_Logo.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="534" y="0" width="21" height="113" backcolor="#1C1C1C" uuid="99a2f1c9-3735-4e96-a10e-a94d584bba0c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="21" height="113" backcolor="#1C1C1C" uuid="c17e0a66-1d38-4964-960b-f8df68338567"/>
+			</rectangle>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="457" y="94" width="77" height="20" uuid="68d5d31f-13a8-42be-871a-568cf05396c7"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="506" y="1" width="28" height="20" uuid="870814fd-dc07-487e-b84f-f6edcceada74"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="469" y="1" width="37" height="20" uuid="5f593410-e1f3-48e0-8f7f-fc855b644a2d"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[Pág:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="26" backcolor="#1C1C1C" uuid="3ab032ae-2970-4c9b-98f3-14ad32f02dee"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="0" width="63" height="28" uuid="5a0488fc-0ccc-41c8-8653-0b8b7e0f1dc6"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="0" width="131" height="28" uuid="7fb29ba4-7844-4fcf-8729-db225c22d2f5"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Número da Conta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="0" width="100" height="28" uuid="9de3b487-143f-4c53-b92a-0fbf3add410b"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Agência]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="0" width="100" height="28" uuid="6e5d8d73-cac7-4ced-94de-d52f766d5ff7"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Saldo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="0" width="41" height="20" uuid="e2d0df84-bdc3-4caa-83de-e01c411b7826"/>
+				<textFieldExpression><![CDATA[$F{Código}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="100" height="20" uuid="5bdc7580-6795-4676-87bc-26afff08160b"/>
+				<textFieldExpression><![CDATA[$F{NúmeroConta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="0" width="77" height="20" uuid="e49808e5-499e-4f5a-9321-0376e29d68d7"/>
+				<textFieldExpression><![CDATA[$F{Agência}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="0" width="100" height="20" uuid="558c383b-90e4-4209-9f98-a442bb8cec39"/>
+				<textFieldExpression><![CDATA[$F{Saldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

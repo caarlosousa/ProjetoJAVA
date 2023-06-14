@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelCartao" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0ff13887-f395-47bb-bdb6-9e68e7783d82">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM cartaocredito]]>
+	</queryString>
+	<field name="Limite" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Validade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CVC" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Código" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NomeCartão" class="java.lang.String"/>
+	<field name="NúmeroCartão" class="java.lang.String"/>
+	<group name="Limite">
+		<groupExpression><![CDATA[$F{Limite}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<rectangle>
+				<reportElement x="534" y="0" width="21" height="111" backcolor="#1C1C1C" uuid="472ef780-b355-4016-9d5b-42ad649e373b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="21" height="111" backcolor="#1C1C1C" uuid="87da14aa-7cb2-46b0-bc20-d4fb15e06fb8"/>
+			</rectangle>
+			<image>
+				<reportElement x="219" y="0" width="116" height="111" uuid="4d7094cc-6b8c-4e78-bdeb-f41f4f750218"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuário\\Desktop\\Billy_Kids_Logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="506" y="0" width="28" height="20" uuid="d3bb06fd-0b3a-4de2-881b-8a6bd1043269"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="457" y="91" width="77" height="20" uuid="e8d4ff1a-4433-4a51-99f9-8e4668a9c9cb"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="469" y="0" width="37" height="20" uuid="67584299-692a-42d2-9161-eb83f3c8a52e"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[Pág:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="26" backcolor="#1C1C1C" uuid="633ccd84-7d7b-4d3e-acfa-31e06527bd7a"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="77" height="28" uuid="89b18407-8f44-4723-977a-4e4d175790cf"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="0" width="32" height="28" uuid="0424ae13-1793-4108-8cfe-938a3ac0849d"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[CVC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="0" width="64" height="28" uuid="dc28fa11-c77f-4358-b5fc-c94a34c23e06"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Validade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="494" y="0" width="61" height="28" uuid="2e5ca510-e7bc-4792-94f5-6319320f054a"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Limite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="0" width="133" height="28" uuid="662e9108-3180-44bd-bbd8-d08f8bb71554"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Nome do Cartão]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="139" height="28" uuid="3757cc3c-0cf3-4f9e-81d6-9b9cf57e5558"/>
+				<textElement>
+					<font fontName="Poppins" size="14"/>
+				</textElement>
+				<text><![CDATA[Número do Cartão]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="0" width="47" height="20" uuid="46eed995-5472-470d-aac8-a1ce8657c20c"/>
+				<textFieldExpression><![CDATA[$F{Código}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="0" width="121" height="20" uuid="4b2fccae-0ad7-43dc-b840-6bb4952e5574"/>
+				<textFieldExpression><![CDATA[$F{NomeCartão}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="0" width="110" height="20" uuid="fcaae975-fee2-474c-95a5-e9b3ddab5e2d"/>
+				<textFieldExpression><![CDATA[$F{NúmeroCartão}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="0" width="22" height="20" uuid="e7818172-5e97-4b08-8b95-88f36b835ae1"/>
+				<textFieldExpression><![CDATA[$F{CVC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="0" width="33" height="20" uuid="356f5c7b-fa12-41b8-81a4-b15dfcd2a5de"/>
+				<textFieldExpression><![CDATA[$F{Validade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="494" y="0" width="61" height="20" uuid="a7c44ff5-0ca8-4054-bf15-77de34e3a740"/>
+				<textFieldExpression><![CDATA[$F{Limite}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

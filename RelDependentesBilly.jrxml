@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelDependentesBilly" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c040dd35-2979-4c13-ade8-416c2a5c7bd5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM dependentes]]>
+	</queryString>
+	<field name="Nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CPF" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RG" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Código" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nascimento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Código">
+		<groupExpression><![CDATA[$F{Código}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<image>
+				<reportElement x="219" y="0" width="116" height="113" uuid="96024d48-b292-4788-821d-2c12386e5d7a"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuário\\Desktop\\Billy_Kids_Logo.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="534" y="0" width="21" height="113" backcolor="#1C1C1C" uuid="ecd845f0-3b15-423e-ab5f-1cf448d47a84"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="21" height="113" backcolor="#1C1C1C" uuid="c81d6981-92a1-4550-9afb-a006032eca36"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="469" y="0" width="37" height="20" uuid="7107361d-bbf1-4d2d-9e99-b19cbbdfae2e"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[Pág:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="457" y="93" width="77" height="20" uuid="110483cc-9b17-4810-bd55-e5108d1affb5"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="506" y="0" width="28" height="20" uuid="601af7e6-1e2e-4e1a-99b1-e4b9ef444ccd"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="26" backcolor="#1C1C1C" uuid="21c3f18b-454f-4625-9369-7fea72741b4a"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="75" height="20" uuid="b0ce2e86-8c2b-4153-86d5-b10f08e6dcd0"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="0" width="71" height="20" uuid="4177fb68-ac74-4ca5-baaa-a62b12ccd35b"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="0" width="39" height="20" uuid="a9f7240f-b262-43a3-92ae-7655cb9dd1f6"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="0" width="29" height="20" uuid="506b3795-a66d-4020-afe0-06644b56825a"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[RG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="0" width="68" height="20" uuid="fcad2212-6230-4d54-a72f-c5d247a11fce"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="84" height="20" uuid="8e0fd19c-c65a-456c-a631-f02b366a4fe9"/>
+				<textElement>
+					<font fontName="Poppins" size="12"/>
+				</textElement>
+				<text><![CDATA[Nascimento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="0" width="47" height="20" uuid="00ecc111-6b12-4b45-8bf1-d6939dba3a40"/>
+				<textFieldExpression><![CDATA[$F{Código}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="0" width="87" height="20" uuid="e570a4c5-e3d8-4ba6-b20c-fd69e097690a"/>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="0" width="72" height="20" uuid="d284c9b0-c8ed-4431-be36-c15942e49138"/>
+				<textFieldExpression><![CDATA[$F{CPF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="60" height="20" uuid="cde26289-00c9-4047-8970-58402ef0da2e"/>
+				<textFieldExpression><![CDATA[$F{RG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="80" height="20" uuid="6cd7f5db-5b69-4b87-a7fd-d61e56f50d9f"/>
+				<textFieldExpression><![CDATA[$F{Telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="459" y="0" width="66" height="20" uuid="b5cc384f-1b64-4520-bf8e-3c68acfce9b0"/>
+				<textFieldExpression><![CDATA[$F{Nascimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
